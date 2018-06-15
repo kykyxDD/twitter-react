@@ -7,7 +7,17 @@ class WelcomeAction extends Component {
   render() {
     return (
       <div className='welcome--actions d-flex h-100 position-relation'>
-
+        <div className='position-absolute  w-100 '>
+          <form className="d-flex py-3">
+            <div>
+            </div>
+            <div>
+            </div>
+            <div>
+              <Link to='/login' className="font-weight-bold btn btn-outline-primary" >Войти</Link>
+            </div>
+          </form>
+        </div>
         <div className='m-auto welcome--actions-content text-left'>
           <div className="d-flex justify-content-between mb-3 align-items-center"> 
             <div> <i className="fab fa-twitter text-primary fa-2x "></i> </div>
