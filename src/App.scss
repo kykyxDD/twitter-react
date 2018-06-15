@@ -26,3 +26,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.App {
+  min-height: 100vh;
+}
+.welcome__footer{
+  color: #aab8c2;
+  border-top: 1px solid #e6ecf0;
+}
+

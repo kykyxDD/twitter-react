@@ -1,0 +1,27 @@
+@import 'default.scss';
+
+.welcome {
+  flex: 1 1 100%;
+  .welcome--listservice {
+    background-color: $bg-blue;
+    font-weight: bold;
+    .welcome--itemservice {
+      display: flex;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    .welcome--itemservice-icon {
+      margin-right: 20px
+    }
+  }
+}
+
+.welcome--actions {
+  .btn {
+    border-radius: 20px;
+  }
+  
+}
+.welcome--actions-content {
+  max-width: 350px;
+}

@@ -1,0 +1,19 @@
+$bg-blue: #1da1f2;
+
+.fa-twitter {
+  color: $bg-blue !important; 
+}
+
+.btn-primary{
+  background-color: $bg-blue !important;
+  border-color: $bg-blue !important;
+}
+
+.btn-outline-primary{
+  border-color: $bg-blue !important;
+  color: $bg-blue !important;
+  &:hover {
+    // color: #fff !important;
+    background-color: #eaf5fd !important;
+  }
+}
