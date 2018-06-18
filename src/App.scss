@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+  // text-align: center;
+}
+
+body {
+  background-color: #fff !important;
 }
 
 .App-logo {
@@ -32,5 +36,6 @@
 .welcome__footer{
   color: #aab8c2;
   border-top: 1px solid #e6ecf0;
+  background-color: #fff;
 }
 

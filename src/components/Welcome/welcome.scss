@@ -1,4 +1,7 @@
-@import 'default.scss';
+@import './../../scss/default.scss';
+body {
+  background-color: #e5ebf0 !important;
+}
 
 .welcome {
   flex: 1 1 100%;
@@ -17,6 +20,7 @@
 }
 
 .welcome--actions {
+  background-color: #fff;
   .btn {
     border-radius: 20px;
   }
@@ -24,4 +28,8 @@
 }
 .welcome--actions-content {
   max-width: 350px;
+}
+.welcome--formLogin {
+  max-width: 600px;
+  margin: 0 auto;
 }

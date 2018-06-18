@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import 'style/welcome.scss';
+import './welcome.scss';
 
 class WelcomeInfo extends Component {
   render() {
     return (
       <div className='text-white d-flex h-100 welcome--listservice '>
-        <div className='m-auto text-left'>
+        <div className='m-auto text-left py-4'>
           <div className='welcome--itemservice'> 
             <div className='welcome--itemservice-icon'><i className="fas fa-search fa-2x"></i></div> 
             <div className='welcome--itemservice-text my-auto'> Читайте о том, что вам интересно.</div>
