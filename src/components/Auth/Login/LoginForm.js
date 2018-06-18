@@ -18,7 +18,7 @@ class LoginForm extends Component {
             </div>
             <div className='d-flex align-items-center pt-2'>
               <div className='mr-3'>
-                <Link to='/login' className="font-weight-bold btn btn-primary" >Войти</Link>
+                <Link to='/login' className="font-weight-bold btn btn-primary btn-radius" >Войти</Link>
               </div>
               <div>
                 <label className='my-auto'>
