@@ -6,12 +6,14 @@ class ModelSignup extends Component {
     super(props);
     this.state = {
       step: 1,
-      modal: true
+      modal: true,
+      isPhone: true
     };
 
     this.toggle = this.toggle.bind(this);
     this.stepNext = this.stepNext.bind(this);
     this.stepPrev = this.stepPrev.bind(this);
+    this.phoneOrEmail = this.phoneOrEmail.bind(this);
   }
 
   toggle() {
@@ -31,27 +33,37 @@ class ModelSignup extends Component {
       step: 1
     });
   }
+  phoneOrEmail() {
+    this.setState({
+      isPhone: !this.state.isPhone
+    })
+  }
 
   render() {
     const externalCloseBtn = <button className="close d-none">&times;</button>;
+    const btnStep1 =  <Button className='btn-radius py-0' onClick={this.stepNext}>Далее</Button>
+    const btnStep2 =  <div onClick={this.stepPrev} className="cursor-pointer">
+                        <i className="fas fa-arrow-left text-primary"></i>
+                      </div>
     return (
       <div>
-        {/* <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button> */}
         <Modal isOpen={this.state.modal} centered={true} toggle={this.toggle} className={this.props.className} external={externalCloseBtn}>
 
           <ModalBody>
             <div className={'h-100 d-flex align-items-center ' + (this.state.step === 1 ? 'flex-row' : 'flex-row-reverse')}>
               <i className="fab fa-twitter text-primary mx-auto fa-lg"></i>
-              {this.state.step === 1 ? (
-                <Button className='btn-radius py-0' onClick={this.stepNext}>Далее</Button>
-              ) : (
-                <div onClick={this.stepPrev} className="cursor-pointer">
-                  <i className="fas fa-arrow-left text-primary"></i>
-                </div>
-              ) }
-              
+              { this.state.step === 1 ? btnStep1 : btnStep2 }              
             </div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <div>
+              <h5 className="font-weight-bold">Создайте учетную запись </h5>
+              <input type='text' placeholder="Имя" /> 
+              { this.state.isPhone ? (
+                <input type='text' placeholder="Телефон" /> 
+              ) : (
+                <input type='email' placeholder="E-mail" />
+              ) }
+              <span onClick={this.phoneOrEmail}>Использовать {this.state.isPhone ? 'эл. почту' : 'телефон'}</span>
+            </div>
           </ModalBody>
           
           
