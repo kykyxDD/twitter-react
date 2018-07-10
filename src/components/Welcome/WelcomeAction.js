@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Button } from 'reactstrap';
-import './welcome.scss';
+// import './welcome.scss';
 import { Link } from 'react-router-dom';
 
 class WelcomeAction extends Component {

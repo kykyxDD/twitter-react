@@ -27,7 +27,8 @@ class LoginForm extends Component {
                 </label>
               </div>
               <div className="pl-3">
-                <a href='/#' className="my-auto">Забыли пароль?</a>
+                {/* <a href='/#' className="my-auto">Забыли пароль?</a> */}
+                <Link to='/reset/begin_reset' className="my-auto">Забыли пароль?</Link>
               </div>
             </div>
           </form>

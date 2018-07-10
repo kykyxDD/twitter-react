@@ -4,6 +4,12 @@ import WelcomeAction from './WelcomeAction';
 import WelcomeInfo from './WelcomeInfo';
 
 class Welcome extends Component {
+  componentWillMount (){
+    document.body.classList.add('bg-grey')
+  }
+  componentWillUnmount (){
+    document.body.classList.remove('bg-grey')
+  }
   render() {
     return (
       <div className='page--welcome'>

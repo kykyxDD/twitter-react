@@ -2,7 +2,10 @@ $bg-blue: #1da1f2;
 $bg-body: #e5ebf0;
 
 body {
-  background-color: $bg-body;
+  background-color: #ffffff;// $bg-body;
+  &.bg-grey {
+    background-color: $bg-body;
+  }
 }
 
 .fa-twitter {
@@ -30,4 +33,12 @@ body {
 }
 .cursor-pointer {
   cursor: pointer ;
+}
+.pageout {
+  max-width: 865px;
+  width: 100%;
+  margin: 0 auto;
+  @media screen and (min-width: 576px){
+    padding: 30px 15px;
+  }
 }

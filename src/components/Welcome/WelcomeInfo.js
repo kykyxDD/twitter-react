@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './welcome.scss';
+// import './welcome.scss';
 
 class WelcomeInfo extends Component {
   render() {
