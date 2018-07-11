@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Welcome from './components/Welcome/index.js';
 import Signup from './components/Auth/Signup/index.js';
 import Login from './components/Auth/Login/index.js';
 import Reset from './components/Auth/Reset/index.js';
+
 
 // import TwitterLogin from 'react-twitter-auth/lib/react-twitter-auth-component.js';
 import Twitter from 'twitter';
@@ -26,14 +27,14 @@ class App extends Component {
 
     return (
       <div className="App d-flex flex-column">
-
-        <Switch>
-          <Route props="state" exact path='/' component={Welcome}/>
-          <Route props="state" path='/signup' component={Signup}/>
-          <Route props="state" path='/login' component={Login}/>
-          <Route props="state" path='/reset/:stepReset' component={Reset}/>
-        </Switch>
-        
+        <BrowserRouter>
+          <Switch>
+            <Route props="state" exact path='/' component={Welcome}/>
+            <Route props="state" path='/signup' component={Signup}/>
+            <Route props="state" path='/login' component={Login}/>
+            <Route props="state" path='/reset/:stepReset' component={Reset}/>
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
