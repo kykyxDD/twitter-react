@@ -74,12 +74,12 @@ class SendReset extends Component {
   }
 }
 
-function ConfirmPinReset(){
+function ConfirmPinReset (props) {
   return (
     <div>
       <h1>Проверьте ваш телефон</h1>
       <div>
-        <p>Вам отправлен код подтверждения на телефон, заканчивающийся на '<b>30</b>'. Введите полученный код ниже для восстановления пароля.</p>
+        <p>Вам отправлен код подтверждения на телефон, заканчивающийся на '<b>{getPathNumber(props.user.number)}</b>'. Введите полученный код ниже для восстановления пароля.</p>
           <form>
           <div className="form-group py-2">
             <input type="name" className="form-control btn-radius search-account" id="name" placeholder="Введите код"/>
@@ -111,7 +111,7 @@ export default class PageReset extends Component {
       case 'send_reset':
         return <SendReset user={this.state.user}/>
       case 'confirm_pin':
-        return <ConfirmPinReset/>
+        return <ConfirmPinReset user={this.state.user}/>
       case 'new_password_reset':
         return <div />
       default:
