@@ -138,3 +138,19 @@
 .search-account {
   max-width: 300px;
 }
+.pageout-reset {
+  .icon {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+  }
+  .info_searched_user {
+    font-size: 13px;
+    line-height: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
