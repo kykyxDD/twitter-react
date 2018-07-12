@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
 import ResetHeader from './Header.js';
 import PageReset from './PageReset.js';
-import { configTitle } from './../../../helper/configTitle.js'
-// import './../auth.scss';/
+import { configTitle } from './../../../helper/configTitle.js';
 
 export default class Reset extends Component {
-  constructor (props) {
-    console.log(props)
-    super(props)
-    
-  }
+ 
   componentWillMount(){
     document.title = configTitle.reset
   }
 
-  render ( ) {
-  
+  render () {  
     return (
       <div>
         <ResetHeader/>
@@ -23,6 +17,4 @@ export default class Reset extends Component {
       </div>
     )
   }
-
 }
-//export default  Reset;
