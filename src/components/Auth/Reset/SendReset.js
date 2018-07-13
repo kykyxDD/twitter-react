@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import defaultProfile from './../../../images/default_profile_normal.png';
-import { getPathNumber, getCodedEmail } from './../../../helper/configConst';
-import { users } from './../../../actions/index';
+import { getPathNumber, getCodedEmail } from 'helper/configConst';
+import { users } from 'actions/index';
 import { withRouter } from 'react-router-dom';
-
+import UsetAuth from 'helper/UsetAuth';
 
 class SendReset extends Component {
   constructor(props) {
@@ -12,18 +11,11 @@ class SendReset extends Component {
     this.state = {
       selectedOption: 'phone'
     };
-    this.getImagePhoto = this.getImagePhoto();
-    this.getStyle = {
-      backgroundImage: `url(${this.getImagePhoto})`
-    }
     this.onSubmit = this.onSubmit.bind(this)
     this.handleOptionChange = this.handleOptionChange.bind(this)
   }
   componentWillMount() {
     this.props.resetClear()
-  }
-  getImagePhoto() {
-    return this.props.user.photo ? this.props.user.photo : defaultProfile;
   }
   handleOptionChange(e) {
     this.setState({selectedOption: e.target.value})
@@ -41,14 +33,7 @@ class SendReset extends Component {
       <div>
         <h1>Как вы хотите сбросить пароль</h1>
 
-        <div className="d-flex pt-4">
-          <div className="icon" style={this.getStyle}>
-          </div>
-          <div className="pl-3 info_searched_user">
-            <div className="font-weight-bold">{this.props.user.name}</div>
-            <div className="text-muted">@{this.props.user.login}</div>
-          </div>
-        </div>
+        <UsetAuth user={this.props.user}/>
 
         <p className='pt-3'>Мы нашли информацию, связанную с вашей учетной записью.</p>
 

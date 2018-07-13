@@ -37,7 +37,7 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={Welcome} />
               <Route path='/signup' component={Signup}  />
-              <Route path='/login' component={Login}    />
+              <Route path='/login'  component={Login}    />
               <Route path='/reset/:stepReset' component={Reset} />
             </Switch>
           </BrowserRouter>

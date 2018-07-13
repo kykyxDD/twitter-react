@@ -1,7 +1,7 @@
 import React , { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getPathNumber, getCodedEmail } from './../../../helper/configConst';
+import { getPathNumber, getCodedEmail } from 'helper/configConst';
 
 function MessageToEmail(props){
   return (

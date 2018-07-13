@@ -28,7 +28,9 @@ class PageReset extends Component {
   render () {
     return (
       <div className="pageout pageout-reset"> 
-        {this.renderSwitch(this.props.step)}
+        <div className="py-3 px-4">
+          {this.renderSwitch(this.props.step)}
+        </div>
       </div>
     )
   }
