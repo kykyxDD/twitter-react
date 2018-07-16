@@ -1,6 +1,6 @@
 import React from 'react';
-import UserAvatarAuth from 'helper/UserAvatarAuth';
-import UserInfoAuth from 'helper/UserInfoAuth';
+import UserAvatarAuth from './UserAvatarAuth';
+import UserInfoAuth from './UserInfoAuth';
 
 export default function UsetAuth (props) {
   return (

@@ -7,6 +7,7 @@ const config = require('./webpack.config.dev');
 const paths = require('./paths');
 
 const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
+console.log(process.env)
 const host = process.env.HOST || '0.0.0.0';
 
 module.exports = function(proxy, allowedHost) {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getPathNumber, getCodedEmail } from 'helper/configConst';
-import { users } from 'actions/index';
+import { profileAuth } from 'actions/index';
 import { withRouter } from 'react-router-dom';
-import UsetAuth from 'helper/UsetAuth';
+import UsetAuth from 'components/helpers/UsetAuth';
 
 class SendReset extends Component {
   constructor(props) {
@@ -69,10 +69,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
   return {
     resetIn: type => {
-      dispatch(users.resetPassword(type))
+      dispatch(profileAuth.resetPassword(type))
     },
     resetClear: () => {
-      dispatch(users.resetClear())
+      dispatch(profileAuth.resetClear())
     }
   }
 }

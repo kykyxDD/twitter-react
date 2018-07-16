@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import UsetAuth from 'helper/UsetAuth';
+import UsetAuth from 'components/helpers/UsetAuth';
 
 class CreateNewPassword extends Component {
   constructor(props) {   

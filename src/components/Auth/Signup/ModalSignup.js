@@ -124,7 +124,7 @@ class ModelSignup extends Component {
 
     return (
       <div >
-        <Modal isOpen={this.state.modal} centered={true} toggle={this.toggle} className="modal-signup" external={externalCloseBtn} >
+        <Modal isOpen={this.state.modal} centered={true} toggle={this.toggle} className="modal-signup" external={externalCloseBtn} backdrop="static" >
           <ModalBody className="px-4">
             <div className={'h-100 d-flex align-items-center ' + (this.state.step === 1 ? 'flex-row' : 'flex-row-reverse')}>
               <i className="fab fa-twitter text-primary mx-auto fa-lg"></i>

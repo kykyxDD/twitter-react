@@ -1,3 +1,7 @@
-import * as users from "./userActions";
+import * as profileAuth from "./userActions";
+import * as profilePage from "./profileActions.js";
 
-export {users}
+export {
+  profileAuth,
+  profilePage
+}
