@@ -34,8 +34,10 @@ class HeaderTwitter extends Component {
                 </Link>
               </li>
             </ul>
-            <div className="d-flex align-items-center">
-              <Button className="btn btn-primary btn-radius">
+            <div className="d-flex align-items-center pr-2">
+              <div>
+              </div>
+              <Button className="btn btn-primary btn-radius font-weight-bold">
                 Твитнуть
               </Button>
             </div>

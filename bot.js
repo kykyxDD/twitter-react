@@ -12,9 +12,9 @@ console.log(config)
 var T = new Twit(config);
 function tweetStatus(message) {
   var tweet = {
-    screen_name: 'EuropaPlus'
+    include_email: true
   }
-  T.get('users/show', tweet, tweeted)
+  T.get('account/verify_credentials', tweet, tweeted)
   function tweeted (err, data, response) {
     if(err) {
       console.log(err)
