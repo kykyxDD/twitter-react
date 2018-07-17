@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { profilePage } from 'actions/index';
 
-import HeaderTwitter from '../helpers/HeaderTwitter';
+import HeaderTwitter from '../Header/index';
 
 class UserPage extends Component {
   componentDidMount () {

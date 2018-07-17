@@ -7,8 +7,6 @@ var config = {
   access_token_secret: 'vnHnDavzn8aYTL6TZagQGiiICqef4KFguestIJM54tKpX'
 }
 
-console.log(config)
-
 var T = new Twit(config);
 function tweetStatus(message) {
   var tweet = {
