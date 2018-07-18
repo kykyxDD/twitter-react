@@ -5,5 +5,5 @@ export default function UserAvatarAuth (props) {
   const getImagePhoto = props.photo || defaultProfile;  
   const getStyle = { backgroundImage: `url(${getImagePhoto})`}
 
-  return <div className="icon" style={getStyle} />
+  return <div className="icon user-avatar" style={getStyle} />
 }

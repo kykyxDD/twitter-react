@@ -73,10 +73,10 @@ export default class HeaderUser extends Component {
           </div>
           <div className="list_search">
             {this.state.listSearch.map((obj, index)=> {
-              return (<Link to={this.getLinkSeach(obj)} key={'list_search--'+index} className="list_search--item px-2 py-2 d-flex justify-content-between align-items-center">
-                <div className="text">{obj}</div>
-                <div className="cursor-pointer" onClick={this.delItemSearch.bind(this, index)}><i className="fas fa-times"></i></div>
-              </Link>)
+              return (<div key={'list_search--'+index} className="list_search--item cursor-pointer px-2 py-2 d-flex justify-content-between align-items-center">
+                <Link to={this.getLinkSeach(obj)} className="text">{obj}</Link>
+                <div className="" onClick={this.delItemSearch.bind(this, index)}><i className="fas fa-times"></i></div>
+              </div>)
             })}
           </div>
         </DropdownMenu>

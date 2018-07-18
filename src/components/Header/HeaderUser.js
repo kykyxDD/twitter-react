@@ -41,7 +41,7 @@ class HeaderUser extends Component {
           data-toggle="dropdown"
           aria-expanded={this.state.dropdownOpen}
         >
-          <div className="user-avatar mx-2 cursor-pointer" id="tooltip-userSetting">
+          <div className="mx-2 cursor-pointer" id="tooltip-userSetting">
               <UserAvatarAuth  photo={this.props.user.profile_image_url}/>
               <Tooltip placement="bottom" autohide={false} isOpen={this.state.tooltipOpen} toggle={this.toggleTooltip} target="tooltip-userSetting">
                 Профиль и настройки

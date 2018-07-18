@@ -2,17 +2,7 @@
 .app-header--container {
   max-width: 1200px;
   margin: 0 auto;
-  .user-avatar {
-    .icon {
-      width: 32px;
-      height: 32px;
-      background-position: center;
-      background-repeat:  no-repeat;
-      background-size: contain;
-      border-radius:  50%;
-      border: 1px solid #b6bfc6;
-    }
-  }
+  
   .form-search {
     height: 33px;
     font-size: 12px;
@@ -145,5 +135,37 @@ input, button {
 }
 .form-create-tween {
   background-color: #e8f5fe;
-  padding: 15px 10px;
+  padding: 15px 13px 7px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background-position: center;
+  background-repeat:  no-repeat;
+  background-size: contain;
+  border-radius:  50%;
+  border: 1px solid #b6bfc6;
+}
+
+.create-tween{
+  .create-tween--contMessage {
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid #a3d8f9;
+    overflow: hidden;
+    .lengthText--circle {
+      position: absolute;
+      bottom: 5px;
+      right: 3px;
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+}
+
+circle {
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
 }

@@ -30,7 +30,7 @@ class HeaderTweet extends Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className='modal-create-new-tweet'>
           <ModalHeader toggle={this.toggle}>{this.state.headerModal[0]}</ModalHeader>
           <ModalBody className='p-0'>
-            <FormCreateTweet createList="false"/>
+            <FormCreateTweet isCreateNewMessage={true} />
           </ModalBody>
           
         </Modal>

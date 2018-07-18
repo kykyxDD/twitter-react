@@ -26,3 +26,14 @@ export function getCodedEmail(email){
 
   return `${coded_login_email}@${coded_serves_email}`
 }
+
+export const defaultDataMessage = {
+  isFocus: false,
+  textMessage: '',
+  people: [],
+  listImage: [],
+  interview: {
+    listAnswers: [],
+    timeBefore: null
+  },
+}
