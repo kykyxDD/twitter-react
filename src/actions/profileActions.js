@@ -2,23 +2,38 @@ import * as types from '../actions/actionTypes';
 import axios from 'axios';
 const url = process.env.NODE_ENV === 'production' ? "/api/" : "http://localhost:4000/api/v1"
 
-
-export const getProfilePage = screen_name => {
-  // console.log(this)
-  axios(`${url}/users/show/${screen_name}`).then(res=>{
-    console.log('res', res.data)
-  }).catch(err => err)
+const fetchProfile = (profile) => {
   return {
     type: types.RESET_PAGE_PROFILE,
-    screen_name
+    profile
   }
-  /*return dispatch => {
-    axios(`${url}/users/show/${screen_name}`).then(res=>{
-      console.log('res', res.data)
-      dispatch({
-        type: types.RESET_PAGE_PROFILE,
-        data: res.data
-      })
-    }).catch(err => err)
-  }*/
+};
+
+const loadProfile = () => {
+  return {
+    type: types.RESET_PAGE_PROFILE_LOADING
+  }
+};
+const getProfilePageError = error => {
+  return {
+    type: types.RESET_PAGE_PROFILE_ERROR,
+    error
+  };
 }
+
+
+
+export const getProfilePage = screen_name => {
+  let req = axios(`${url}/users/show/${screen_name}`)
+
+  return (dispatch) => {
+    dispatch(loadProfile())
+    req.then(res=> {
+      dispatch(fetchProfile(res.data))
+    }).catch(err => {
+      dispatch(getProfilePageError(err))
+    })
+  }
+}
+
+

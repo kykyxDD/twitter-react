@@ -4,7 +4,7 @@ import profile from "./profilePage";
 
 const rootReducer = combineReducers({
   user,
-  profile
+  stateProfile:profile
 });
 
 export default rootReducer
