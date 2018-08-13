@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { profilePage } from 'actions/index';
@@ -28,11 +29,14 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    getProfile: name => {
-      dispatch(profilePage.getProfilePage(name))
-    }
-  }
+  // return {
+  //   getProfile: name => {
+  //     profilePage.getProfilePage(name)
+  //   }
+  // }
+  return bindActionCreators({
+    getProfile: profilePage.getProfilePage
+  }, dispatch)
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserPage));
