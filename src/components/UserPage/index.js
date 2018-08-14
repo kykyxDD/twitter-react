@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { profilePage } from 'actions/index';
 
-import UserPageHeader from './UserPageHeader'
+import './userPage.scss';
 
-import HeaderTwitter from '../Header/index';
+import UserPageHeader from './Header/index'
 
 class UserPage extends Component {
   componentDidMount () {
@@ -16,14 +16,13 @@ class UserPage extends Component {
   render () {
     return (
       <div>
-        <HeaderTwitter/>
-        <div>
+        <div className="main">
         {
           this.props.loading ? 
           'load' : 
           this.props.error ? 
           'error' : 
-          <UserPageHeader profile={this.props.profile}/>
+          <UserPageHeader/>
         }
         </div>
       </div>
@@ -32,7 +31,7 @@ class UserPage extends Component {
 }
 
 const mapStateToProps = state => {
-  // console.log(state)
+  // console.log('mapStateToProps',state)
   return {
     profile: state.stateProfile.profile,
     loading: state.stateProfile.loading,
