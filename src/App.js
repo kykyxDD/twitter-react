@@ -12,7 +12,15 @@ import UserPage from './components/UserPage/index.js';
 
 import rootReducer from "./reducers";
 
-let store = createStore(rootReducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
+function getArgumantStore(){
+  if(window.__REDUX_DEVTOOLS_EXTENSION__){
+    return compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+  } else {
+    return applyMiddleware(thunk) 
+  }
+}
+
+let store = createStore(rootReducer, getArgumantStore())
 
 class App extends Component {
   render() {
