@@ -12,14 +12,22 @@ import UserPage from './components/UserPage/index.js';
 
 import rootReducer from "./reducers";
 
-let store = createStore(rootReducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
+function getEnhancer () {
+  if(window.__REDUX_DEVTOOLS_EXTENSION__) {
+    return compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) 
+  } else { 
+    return applyMiddleware(thunk) 
+  }
+}
+
+let store = createStore(rootReducer, getEnhancer())
 
 class App extends Component {
   render() {
     return (
       <div className="App d-flex flex-column">
         <Provider store={store}>
-          <BrowserRouter>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Switch>
               <Route exact path='/' component={Welcome} />
               <Route path='/signup' component={Signup}  />
