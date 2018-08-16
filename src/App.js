@@ -12,6 +12,7 @@ import UserPage from './components/UserPage/index.js';
 
 import rootReducer from "./reducers";
 
+
 function getEnhancer () {
   if(window.__REDUX_DEVTOOLS_EXTENSION__) {
     return compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) 
