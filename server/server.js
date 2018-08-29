@@ -39,29 +39,29 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-router.route('/health-check').get(function(req, res) {
-  res.status(200);
-  res.send('Hello World');
-});
+// router.route('/health-check').get(function(req, res) {
+//   res.status(200);
+//   res.send('Hello World');
+// });
 
-var createToken = function(auth) {
-  return jwt.sign({
-    id: auth.id
-  }, 'my-secret',
-  {
-    expiresIn: 60 * 120
-  });
-};
+// var createToken = function(auth) {
+//   return jwt.sign({
+//     id: auth.id
+//   }, 'my-secret',
+//   {
+//     expiresIn: 60 * 120
+//   });
+// };
 
-var generateToken = function (req, res, next) {
-  req.token = createToken(req.auth);
-  return next();
-};
+// var generateToken = function (req, res, next) {
+//   req.token = createToken(req.auth);
+//   return next();
+// };
 
-var sendToken = function (req, res) {
-  res.setHeader('x-auth-token', req.token);
-  return res.status(200).send(JSON.stringify(req.user));
-};
+// var sendToken = function (req, res) {
+//   res.setHeader('x-auth-token', req.token);
+//   return res.status(200).send(JSON.stringify(req.user));
+// };
 
 router.route('/account/verify_credentials').get(function(req, res) {
   const tweet = {
@@ -81,7 +81,6 @@ router.route('/users/show/:screenName').get(function(req, res){
   const tweet = {
     screen_name: req.params.screenName
   }
-  console.log(req.params)
   T.get('users/show', tweet, function (err, data, response) {
     if(err) {
       //console.log(err)
@@ -93,6 +92,8 @@ router.route('/users/show/:screenName').get(function(req, res){
   })
 })
 
+
+/*
 router.route('/auth/twitter/reverse')
   .post(function(req, res) {
     request.post({
@@ -104,6 +105,7 @@ router.route('/auth/twitter/reverse')
       }
     }, function (err, r, body) {
       if (err) {
+        console.log(body)
         return res.send(500, { message: err.message });
       }
 
@@ -181,11 +183,12 @@ var getOne = function (req, res) {
 
   res.json(user);
 };
+*/
 
-router.route('/account/verify_credentials')
+// router.route('/account/verify_credentials')
 
-router.route('/auth/me')
-  .get(authenticate, getCurrentUser, getOne);
+// router.route('/auth/me')
+//   .get(authenticate, getCurrentUser, getOne);
 
 app.use('/api', router);
 

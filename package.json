@@ -42,6 +42,7 @@
     "i": "^0.3.6",
     "install": "^0.12.1",
     "jest": "20.0.4",
+    "jshint": "^2.9.6",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.7",
     "node-sass": "^4.9.0",
