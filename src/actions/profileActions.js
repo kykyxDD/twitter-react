@@ -1,6 +1,6 @@
 import * as types from '../actions/actionTypes'; 
 import axios from 'axios';
-const url = process.env.NODE_ENV === 'production' ? "/api/" : "http://localhost:4000/api/v1"
+const url = process.env.NODE_ENV === 'production' ? "/api" : "http://localhost:5000/api"
 
 const fetchProfile = (profile) => {
   return {

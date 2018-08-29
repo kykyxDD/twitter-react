@@ -4,9 +4,11 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { profilePage } from 'actions/index';
 
+
 import './userPage.scss';
 
-import UserPageHeader from './Header/index'
+import UserPageHeader from './Header/index';
+import HeaderTwitter from '../Header/index';
 
 class UserPage extends Component {
   componentDidMount () {
@@ -16,6 +18,7 @@ class UserPage extends Component {
   render () {
     return (
       <div>
+        <HeaderTwitter />
         <div className="main">
         {
           this.props.loading ? 

@@ -17,30 +17,12 @@ var mongoose = require('./mongoose'),
 mongoose();
 
 var User = require('mongoose').model('User');
-// var passportConfig = require('./passport');
-
-//setup configuration for facebook login
-// passportConfig();
 
 var app = express();
+const port = process.env.PORT || 5000;
 
 
 let T = new Twit(twitterConfig) ;
-// console.log(T)
-// const tweetConfig = {
-//   include_email: true
-// }
-
-// let tweet = passportConfig()
-// console.log(tweet.get)
-/*passportConfig.get('account/verify_credentials', tweetConfig, tweeted)
-function tweeted (err, data, response) {
-  if(err) {
-    console.log(err)
-  } else {
-    console.log('data', JSON.stringify(data))
-  }
-}*/
 
 // enable cors
 var corsOption = {
@@ -205,9 +187,9 @@ router.route('/account/verify_credentials')
 router.route('/auth/me')
   .get(authenticate, getCurrentUser, getOne);
 
-app.use('/api/v1', router);
+app.use('/api', router);
 
-app.listen(4000);
+app.listen(port, () => console.log(`Listening on port ${port}`));
 module.exports = app;
 
-console.log('Server running at http://localhost:4000/');
+console.log('Server running at http://localhost:5000/');
