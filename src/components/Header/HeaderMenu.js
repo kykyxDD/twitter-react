@@ -30,7 +30,7 @@ export default class HeaderMenu extends Component {
   }
   render () {
     return (
-      <ul className="header--menu">
+      <ul className="header--menu menu-hover">
         {this.state.menu.map(obj => {
           return (<li key={obj.key}>
             <Link to={obj.link} className="px-3">

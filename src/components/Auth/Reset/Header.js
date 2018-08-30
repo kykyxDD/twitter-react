@@ -6,7 +6,7 @@ class LoginHeader extends Component {
     return (
       <div className="header">
         <div className='header--container'>
-          <ul className="header--menu">
+          <ul className="header--menu menu-hover">
             <li className="">
               <div className='py-2'> 
                 <i className="fab fa-twitter text-primary mx-2"></i>

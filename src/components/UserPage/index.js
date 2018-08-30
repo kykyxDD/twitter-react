@@ -4,15 +4,16 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { profilePage } from 'actions/index';
 
-
 import './userPage.scss';
 
-import UserPageHeader from './Header/index';
 import HeaderTwitter from '../Header/index';
+
+// import UserPageHeader from './Header/index';
+import UserPageBody from './Body/index';
+
 
 class UserPage extends Component {
   componentDidMount () {
-    console.log(this.props)
     this.props.getProfile(this.props.match.params.name)
   }
   render () {
@@ -25,7 +26,11 @@ class UserPage extends Component {
           'load' : 
           this.props.error ? 
           'error' : 
-          <UserPageHeader/>
+          this.props.profile ? 
+          (
+            // <UserPageHeader/>
+            <UserPageBody profile={this.props.profile}/>
+          ) : ''
         }
         </div>
       </div>

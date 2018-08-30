@@ -21,6 +21,7 @@ class Welcome extends Component {
             <WelcomeInfo />
           </div>
         </div>
+
         <footer className='w-100 welcome__footer d-flex justify-content-center py-2 mt-auto'>
           <div>О нас</div>
         </footer>

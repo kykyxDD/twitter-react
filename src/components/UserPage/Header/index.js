@@ -35,7 +35,7 @@ class UserPageHeader extends Component {
           </div>
         </div>
         <div className="main-banner-profile">
-          <div className="app-header--container d-flex ">
+          <div className="app-header--container d-flex h-100">
             <div className="profileAvatar w-25">
               <div>
               </div>

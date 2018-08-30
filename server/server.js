@@ -92,6 +92,21 @@ router.route('/users/show/:screenName').get(function(req, res){
   })
 })
 
+router.route('/users/timeline/:screenName').get(function(req, res){
+  const tweet = {
+    screen_name: req.params.screenName
+  }
+  T.get('statuses/user_timeline', tweet, function (err, data, response) {
+    if(err) {
+      // console.log(err, response)
+      return res.send(err.statusCode, { message: err.message })
+    } else {
+      // console.log('data', JSON.stringify(data))
+      return res.send(data)
+    }
+  })
+})
+
 
 /*
 router.route('/auth/twitter/reverse')
