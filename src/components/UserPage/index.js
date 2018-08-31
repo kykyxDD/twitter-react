@@ -8,7 +8,7 @@ import './userPage.scss';
 
 import HeaderTwitter from '../Header/index';
 
-// import UserPageHeader from './Header/index';
+import UserPageHeader from './Header/index';
 import UserPageBody from './Body/index';
 
 
@@ -20,7 +20,6 @@ class UserPage extends Component {
     return (
       <div>
         <HeaderTwitter />
-        <div className="main">
         {
           this.props.loading ? 
           'load' : 
@@ -28,11 +27,12 @@ class UserPage extends Component {
           'error' : 
           this.props.profile ? 
           (
-            // <UserPageHeader/>
-            <UserPageBody profile={this.props.profile}/>
+            <div className="main">
+              <UserPageHeader/>
+              <UserPageBody profile={this.props.profile}/>
+            </div>
           ) : ''
         }
-        </div>
       </div>
     )
   }

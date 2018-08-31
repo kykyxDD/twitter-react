@@ -1,7 +1,7 @@
 import * as types from '../actions/actionTypes'; 
 
 const initialState = {
-	profile: null,
+	timeline: null,
 	loading: false,
 	error: false
 };
@@ -9,25 +9,26 @@ const initialState = {
 
 export default function notes(state=initialState, action) {
   switch (action.type) {
-    case types.RESET_PAGE_PROFILE:
-      return {
-      	...state,
+
+		case types.RESET_PROFILE_TIMELINE:
+			return {
+				...state,
 				loading: false,
-				profile: action.profile,
+				timeline: action.timeline,
 				error: false
-	  };
-    case types.RESET_PAGE_PROFILE_LOADING:
-      return {
-      	...state,
-      	loading: true,
-				profile: null,
+		};
+		case types.RESET_PROFILE_TIMELINE_LOADING:
+			return {
+				...state,
+				loading: true,
+				timeline: null,
 				error: false
-      };
-    case types.RESET_PAGE_PROFILE_ERROR:
-      return {
-      	...state,
+			};
+		case types.RESET_PROFILE_TIMELINE_ERROR:
+			return {
+				...state,
 				loading: false,
-				profile: null,
+				timeline: null,
 				error: action.error
 		};
 

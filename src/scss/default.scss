@@ -2,7 +2,7 @@ $bg-blue: #1da1f2;
 $bg-body: #e5ebf0;
 
 body {
-  background-color: #ffffff;// $bg-body;
+  background-color: $bg-body !important;
   &.bg-grey {
     background-color: $bg-body;
   }

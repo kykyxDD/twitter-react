@@ -3,20 +3,20 @@
 //mongoose file must be loaded before all other files in order to provide
 // models to other modules
 var mongoose = require('./mongoose'),
-  passport = require('passport'),
+  // passport = require('passport'),
   express = require('express'),
-  jwt = require('jsonwebtoken'),
-  expressJwt = require('express-jwt'),
+  // jwt = require('jsonwebtoken'),
+  // expressJwt = require('express-jwt'),
   router = express.Router(),
   cors = require('cors'),
   bodyParser = require('body-parser'),
-  request = require('request'),
+  // request = require('request'),
   Twit = require('twit'),
   twitterConfig = require('./twitter.config.js');
 
 mongoose();
 
-var User = require('mongoose').model('User');
+// var User = require('mongoose').model('User');
 
 var app = express();
 const port = process.env.PORT || 5000;
@@ -38,6 +38,8 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
+
+
 
 // router.route('/health-check').get(function(req, res) {
 //   res.status(200);
@@ -69,10 +71,8 @@ router.route('/account/verify_credentials').get(function(req, res) {
   }
   T.get('account/verify_credentials', tweet, function (err, data, response) {
     if(err) {
-      //console.log(err)
-      return res.send(500, { message: err.message })
+      return res.send(err.statusCode, { message: err.message })
     } else {
-      console.log('data', JSON.stringify(data))
       return res.send(data)
     }
   })
@@ -83,10 +83,8 @@ router.route('/users/show/:screenName').get(function(req, res){
   }
   T.get('users/show', tweet, function (err, data, response) {
     if(err) {
-      //console.log(err)
-      return res.send(500, { message: err.message })
+      return res.send(err.statusCode, { message: err.message })
     } else {
-      // console.log('data', JSON.stringify(data))
       return res.send(data)
     }
   })
@@ -98,10 +96,8 @@ router.route('/users/timeline/:screenName').get(function(req, res){
   }
   T.get('statuses/user_timeline', tweet, function (err, data, response) {
     if(err) {
-      // console.log(err, response)
       return res.send(err.statusCode, { message: err.message })
     } else {
-      // console.log('data', JSON.stringify(data))
       return res.send(data)
     }
   })

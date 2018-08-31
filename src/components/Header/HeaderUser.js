@@ -84,18 +84,8 @@ class HeaderUser extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state.user)
   return {
     user: state.user,
   }
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     getProfile: name => {
-//       dispatch(profilePage.getProfilePage(name))
-//     }
-//   }
-// }
-
 export default connect(mapStateToProps)(HeaderUser);
